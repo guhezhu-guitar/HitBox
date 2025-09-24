@@ -4,9 +4,16 @@ const { ccclass, property } = _decorator;
 @ccclass('CameraControl')
 export class CameraControl extends Component {
     start() {
-input.on(Input.EventType.TOUCH_START,this.onTouchStart,this)    
-input.on(Input.EventType.TOUCH_END,this.onTouchEnd,this)
-input.on(Input.EventType.TOUCH_MOVE,this.onTouchMove,this)
+    input.on(Input.EventType.TOUCH_START,this.onTouchStart,this)    
+    input.on(Input.EventType.TOUCH_END,this.onTouchEnd,this)
+    input.on(Input.EventType.TOUCH_MOVE,this.onTouchMove,this)
+    }
+
+    //对监听事件的销毁
+    onDestroy(): void {
+    input.off(Input.EventType.TOUCH_START,this.onTouchStart,this)    
+    input.off(Input.EventType.TOUCH_END,this.onTouchEnd,this)
+    input.off(Input.EventType.TOUCH_MOVE,this.onTouchMove,this)  
     }
 
     onTouchStart(event:EventTouch){

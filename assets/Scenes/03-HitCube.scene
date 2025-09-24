@@ -299,6 +299,7 @@
       "__id__": 9
     },
     "bulletSpeed": 40,
+    "fireRate": 0.15,
     "_id": "55VJ7tNjVBM7ZRozJTNaML"
   },
   {
